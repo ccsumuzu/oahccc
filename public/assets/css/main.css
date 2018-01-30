@@ -250,7 +250,7 @@
 		font-style: italic;
 		margin: 0 0 2rem 0;
 		padding: 0.5rem 0 0.5rem 2rem;
-		font-size: 85%;
+		font-size: 82%;
 	}
 
 	code {
@@ -622,7 +622,7 @@
 			-webkit-pointer-events: none;
 			-ms-pointer-events: none;
 			pointer-events: none;
-			/*background-image: url("../../images/overlay.png");*/
+			background-image: url("../../images/overlay.png");
 			/*background-color: rgba(19, 21, 25, 0.4);*/
 			border-radius: 4px;
 			content: '';
@@ -650,7 +650,7 @@
 			margin-top: -0.2em;	
 		}
 
-			.image.left img, .image.right img {
+			.image.left img, .image.right img, .image.website img {
 				width: 100%;
 			}
 
@@ -659,7 +659,6 @@
 			padding: 0 1em 0.75em 0;
 			top: 0.5em;
 		}
-
 		.image.right {
 			float: right;
 			padding: 0 0 0.75em 0.5em;
@@ -700,9 +699,13 @@
 				margin: 1.5rem 0;
 			}
 
-			.image.left, .image.right {
+			.image.left, .image.right{
 				max-width: 100%;				
 				padding: 0 4rem 2rem 4rem;
+			}
+
+			.image.website {
+				max-width: 100%;
 			}
 
 		}
@@ -1326,7 +1329,7 @@
 
 				#header nav ul li a {
 					display: block;
-					min-width: 7.5rem;
+					min-width: 8rem;
 					height: 2.75rem;
 					line-height: 2.75rem;
 					padding: 0 1rem 0 1rem;
@@ -1520,7 +1523,7 @@
 		}
 
 		#main p {
-			font-size: 85%;
+			font-size: 82%;
 			/* line-height: 1.4em; */
 		}
 
@@ -1650,4 +1653,52 @@
 	    left: 0;
 	    width: 100%;
 	    height: 100%;
+	}
+
+
+/* Website Portfolio */
+	.image.website {
+		max-width: 49%;
+		margin: -0.2em 0.1em 0 0;	
+	}
+
+	@media screen and (max-width: 480px) {
+
+		.image.website {
+			max-width: 100%;
+			margin-bottom: 0.4rem;
+		}
+
+		.overlay {
+			/* need to resolve opacity issue */
+		}
+
+	}
+
+	.overlay {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 100%;
+		width: 100%;
+		opacity: 0.6;
+		transition: .5s ease;
+		background-color: #008CBA;
+	}
+
+	.text {
+		color: white;
+		font-size: 20px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		text-align: center;
+	}
+
+	.website:hover .overlay {
+		opacity: 0;
 	}
